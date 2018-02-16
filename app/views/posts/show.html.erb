@@ -1,0 +1,48 @@
+
+<%= image_tag @post.image.post_disp %>
+<br><br>
+
+<%= @post.date_post %> <br><br>
+<h1><%= @post.title %></h1>
+<h3><%= @post.chapeau %></h3>
+<br>
+<%= @post.body %><br>
+<br>
+
+
+
+<%= link_to post_user_path(@post,@post.user) do %>
+
+  <%= @post.user.fullname %><br><% end %>
+<br><br>
+
+<% if current_user == @post.user %>
+
+  <%= link_to "Modifier", edit_post_path(@post) %>
+  <%= link_to "Supprimer", post_path(@post), :method => :delete, data: {confirm: 'Etes-vous sur?'}  %>
+
+<% end %>
+
+<%= form_for @comment, url:  post_comments_path(@post) do |f| %>
+
+  <%= f.text_field :body %>
+  <%= f.submit %>
+
+<% end %>
+
+<br><br>
+
+<%	 @comments.each do |com|%>
+
+  <br><br>
+  -----------------------------------------------------------
+  <br><br>
+
+
+  <%= com.body  %>  ----  By <%= com.user.fullname  %>
+
+
+<%	end  %>
+<br><br><br><br><br>
+
+<br>

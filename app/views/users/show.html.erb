@@ -1,0 +1,31 @@
+<%= @user.fullname %>
+<br><br>
+
+<%= @user.email %>
+
+<br>
+
+<%	 @user.post.each do |post|%>
+
+  <br><br>
+  -----------------------------------------------------------
+  <br><br>
+  <%= image_tag post.image.thumb %>
+
+    <%= link_to  post_path(post) do %>
+      <%=	 post.title %>
+    <% end %>
+  <br>
+  <%= post.date_post %>
+
+  <br>
+
+  By <%= post.user.fullname %>
+
+  <br><br>
+
+  <%= post.chapeau %>
+
+
+<%	end  %>
+<br><br>
