@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RubyEval</title>
+  <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<h1><%= link_to "Accueil", posts_path %>
+<h2 style="text-align:center"><%= link_to "Accueil", posts_path %>
 
 
 <% if user_signed_in? %>
@@ -25,7 +25,7 @@
 
 <% end %>
 
-</h1>
+</h2>
 
 
 <br><br>
